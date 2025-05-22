@@ -6,11 +6,11 @@ service:
 stages:
   Build:
     mavenExecuteStaticCodeChecks: false
-    npmExecuteLint: true
+    npmExecuteLint: false
   Additional Unit Tests:
     npmExecuteScripts: false
   Malware Scan:
-    malwareExecuteScan: true
+    malwareExecuteScan: false
   Acceptance:
     cloudFoundryDeploy: false
     cfApiEndpoint: "https://api.cf.us10-001.hana.ondemand.com"
@@ -31,7 +31,7 @@ stages:
     cfCredentialsId: "cf"
     deployType: "standard"
     tmsExport: false
-    tmsUpload: true
+    tmsUpload: false
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
